@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  Enter a URL here:
+  <form method="POST">
+    <input type="input" name="url"></input>
+  </form>
+  <a href='#'><div id ="Search">Search...DO NOT HIT ENTER</div></a>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!--please don't judge...-->
+  <script>$('#Search').on('click', function()
+    {
+      var query = $('input').val();
+      $.ajax({type:'POST', url: 'http://127.0.0.1:8080/', data: 'url=' + query}); 
+    });
+  </script>
+</body>
+</html>
